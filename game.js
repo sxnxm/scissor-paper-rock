@@ -57,12 +57,12 @@ function game() {
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Enter your bet: scissor, paper or rock  ");
         let computerSelection = computerPlay();
-        let findWinner = playRound(playerSelection, computerSelection);
+        let roundOutcome = playRound(playerSelection, computerSelection);
 
         // stores the data of each round
-        if (findWinner == "WIN") {
+        if (roundOutcome == "WIN") {
             winner++
-        } else if (findWinner == "LOSE") {
+        } else if (roundOutcome == "LOSE") {
             loser++
         } else {
             stalematers++
