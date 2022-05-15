@@ -50,9 +50,9 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    let win = "";
-    let lose = "";
-    let draw = "";
+    let winner = "";
+    let loser = "";
+    let stalematers = "";
 
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Enter your bet: scissor, paper or rock  ");
@@ -61,19 +61,19 @@ function game() {
 
         // stores the data of each round
         if (findWinner == "WIN") {
-            win++
+            winner++
         } else if (findWinner == "LOSE") {
-            lose++
+            loser++
         } else {
-            draw++
+            stalematers++
         }
     }
     // decides the winner 
-    if (win > lose) {
-        console.log("You won");
+    if (winner > loser) {
+        console.log("You won the match");
 
-    } else if (lose > win) {
-        console.log("You lose");
+    } else if (loser > winner) {
+        console.log("You lost the match");
 
     } else {
         console.log("Draw!");
