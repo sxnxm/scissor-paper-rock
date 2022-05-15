@@ -1,8 +1,8 @@
 
 // randomly returns either ‘Rock’, ‘Paper’ or ‘Scissors’
 function computerPlay() {
-    val = ["scissor", "paper", "rock"];
-    return val[Math.floor(Math.random() * 3)]
+    computerChoices = ["scissor", "paper", "rock"];
+    return computerChoices[Math.floor(Math.random() * 3)]
 }
 
 
@@ -50,9 +50,9 @@ function playRound(playerSelection, computerSelection) {
 
 
 function game() {
-    let winner = "";
-    let loser = "";
-    let stalematers = "";
+    let winner = 0;
+    let loser = 0;
+    let stalematers = 0;
 
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Enter your bet: scissor, paper or rock  ");
