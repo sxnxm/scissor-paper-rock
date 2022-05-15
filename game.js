@@ -1,4 +1,5 @@
-// randomly return either ‘Rock’, ‘Paper’ or ‘Scissors’
+
+// randomly returns either ‘Rock’, ‘Paper’ or ‘Scissors’
 function computerPlay() {
     val = ["scissor", "paper", "rock"];
     return val[Math.floor(Math.random() * 3)]
@@ -11,43 +12,72 @@ function playRound(playerSelection, computerSelection) {
 
     if (playerSelection == "scissor") {
         if (computerSelection == "paper") {
-            return "You win! Scissor beats Paper";
+            console.log("You win! Scissor beats Paper");
+            return "win";
         } else if (computerSelection == "rock") {
-            return "You lose! Rock beats Scissor";
+            console.log("You lose! Rock beats Scissor");
+            return "lose";
         } else {
-            return "Draw! Scissor vs Scissor";
+            console.log("Draw! Scissor vs Scissor");
+            return "draw";
         }
 
     } else if (playerSelection == "paper") {
         if (computerSelection == "rock") {
-            return "You win! Paper beats Rock";
+            console.log("You win! Paper beats Rock");
+            return "win";
         } else if (computerSelection == "scissor") {
-            return "You lose! Scissor beats Paper";
+            console.log("You lose! Scissor beats Paper");
+            return "lose";
         } else {
-            return "Draw! Paper vs Paper";
+            console.log("Draw! Paper vs Paper");
+            return "draw";
         }
 
     } else {
         if (computerSelection == "scissor") {
-            return "You win! Rock beats Scissor";
+            console.log("You win! Rock beats Scissor");
+            return "win";
         } else if (computerSelection == "paper") {
-            return "You lose! Paper beats rock";
+            console.log("You lose! Paper beats rock");
+            return "lose";
         } else {
-            return "Draw! Rock vs Rock";
+            console.log("Draw! Rock vs Rock");
+            return "draw";
         }
     }
 }
 
 
 function game() {
+    let win = "";
+    let lose = "";
+    let draw = "";
 
     for (let i = 0; i < 5; i++) {
         let playerSelection = prompt("Enter your bet: scissor, paper or rock  ");
         let computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
+        let findWinner = playRound(playerSelection, computerSelection);
+
+        // stores the data of each round
+        if (findWinner == "win") {
+            win++
+        } else if (findWinner == "lose") {
+            lose++
+        } else {
+            draw++
+        }
+    }
+    // decides the winner 
+    if (win > lose) {
+        console.log("You won");
+
+    } else if (lose > win) {
+        console.log("You lose");
+
+    } else {
+        console.log("draw");
     }
 }
+
 game();
-
-
-
