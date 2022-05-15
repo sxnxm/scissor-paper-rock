@@ -13,37 +13,37 @@ function playRound(playerSelection, computerSelection) {
     if (playerSelection == "scissor") {
         if (computerSelection == "paper") {
             console.log("You win! Scissor beats Paper");
-            return "win";
+            return "WIN";
         } else if (computerSelection == "rock") {
             console.log("You lose! Rock beats Scissor");
-            return "lose";
+            return "LOSE";
         } else {
             console.log("Draw! Scissor vs Scissor");
-            return "draw";
+            return "DRAW";
         }
 
     } else if (playerSelection == "paper") {
         if (computerSelection == "rock") {
             console.log("You win! Paper beats Rock");
-            return "win";
+            return "WIN";
         } else if (computerSelection == "scissor") {
             console.log("You lose! Scissor beats Paper");
-            return "lose";
+            return "LOSE";
         } else {
             console.log("Draw! Paper vs Paper");
-            return "draw";
+            return "DRAW";
         }
 
     } else {
         if (computerSelection == "scissor") {
             console.log("You win! Rock beats Scissor");
-            return "win";
+            return "WIN";
         } else if (computerSelection == "paper") {
             console.log("You lose! Paper beats rock");
-            return "lose";
+            return "LOSE";
         } else {
             console.log("Draw! Rock vs Rock");
-            return "draw";
+            return "DRAW";
         }
     }
 }
@@ -60,9 +60,9 @@ function game() {
         let findWinner = playRound(playerSelection, computerSelection);
 
         // stores the data of each round
-        if (findWinner == "win") {
+        if (findWinner == "WIN") {
             win++
-        } else if (findWinner == "lose") {
+        } else if (findWinner == "LOSE") {
             lose++
         } else {
             draw++
@@ -76,7 +76,7 @@ function game() {
         console.log("You lose");
 
     } else {
-        console.log("draw");
+        console.log("Draw!");
     }
 }
 
